@@ -45,5 +45,33 @@ function addMyChat(content){
     $target.scrollTop = $target.scrollHeight;
 }
 
+let list = [1,2,3,4];
+function setUserlist(list){
+    if(list.length < 1) return;
 
-   
+    $userlist = document.querySelector('#user-list');
+    $userCount = document.querySelector('#user-count');
+
+    
+    $userlist.innerHTML = '';
+    for(let i in list){
+        $userlist.innerHTML += `
+            <li>${list[i]}</li>
+        `;
+    }
+    $userCount.innerHTML = list.length;
+}
+
+
+
+window.onload = ()=>{
+    const $leftDrawerButton = document.querySelector('#menu-list').firstElementChild;
+    const $leftDrawer = document.querySelector('#left-drawer');
+    const $closeDrawerButton = document.querySelector('.drawer-head').firstElementChild;
+    $leftDrawerButton.addEventListener('click', ()=>{
+        $leftDrawer.style.transform = 'translate(0, 0)';
+    })
+    $closeDrawerButton.addEventListener('click', ()=>{
+        $leftDrawer.style.transform = 'translate(-100%, 0)';
+    })
+}

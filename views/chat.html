@@ -10,8 +10,32 @@
 
     <body>
         <div id="container" class="wrapper">
+
+                
+            <div id="left-drawer">
+                <div class = "drawer-head">
+                    <p>←</p>
+                </div>
+                <div class="drawer-content">
+                    <p id="user-count-info">접속중: <span id="user-count">0</span>명</p>
+                    <ul id="user-list">
+                        <li>d</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                    </ul>
+                </div>
+                <div class="drawer-tmp" class="drawer-footer">
+                </div>
+            </div>
+
+
+
             <div id="header" class="menu-container">
-                <p>Chatting</p>
+                <ul id="menu-list" class="menu-list">
+                    <li>=</li>
+                    <li>Chatting</li>
+                </ul>
+
             </div>
 
             <div id="content" class="chat-container">
@@ -56,6 +80,9 @@
 
            })
 
+           socket.on('userlist', (userlist)=>{
+                setUserlist(userlist);
+           })
            socket.on('join', (id)=>{
                 addOppositeChat(null, id, '입장하셨습니다');
             })
