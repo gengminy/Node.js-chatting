@@ -1,0 +1,150 @@
+h1{
+    color: blue;
+}
+body{
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+}
+
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    border: 1px solid rgb(185, 185, 185);
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom, rgb(238, 238, 238), white, rgb(238, 238, 238));
+    border: 1px solid rgb(110, 110, 110);
+    border-radius: 10px;;
+}
+
+.wrapper{
+    height: 100%; width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-container{
+    display: flex;
+    background: black;
+    color: white;
+    padding: 8px;
+}
+.menu-container p{
+    margin: 0 auto;
+    padding: 12px;
+    margin: 0 10px 0 10px;
+    font-size: 22px;    
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+
+.chat-container{
+    height: 70%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.opposite-chat{
+    display: flex;
+    
+    margin: 3px;
+    padding: 3px;
+    
+}
+.opposite-img{
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    background: url(http://simpleicon.com/wp-content/uploads/user-4.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 100%;
+    box-shadow: 0 0 0 1px black;
+}
+
+.opposite-content{
+    margin-left: 3px;
+}
+.opposite-content-name{
+    font-family: "맑은 고딕";
+    margin: 0 0 3px 0;
+}
+.opposite-content-message{
+    margin: 0 auto;
+    background: #1861e9;
+    box-shadow: 0 4px 4px -4px black;
+    
+    color: white;
+    padding: 4px 8px 4px 8px;
+    border-radius: 0 15px 15px 15px;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    max-width: 1000px;
+}
+.opposite-content-timestamp{
+    margin: 0 2% 4px 4px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+    font-size : 13px;
+    text-align: left;
+}
+
+.my-chat{
+    display: flex;
+    justify-content: flex-end;
+    margin: 3px;
+    padding: 3px;
+
+    
+}
+.my-content-message{
+    margin: 0;
+    box-shadow: 0 4px 4px -4px black;
+    background: white;
+    color: black;
+    padding: 4px 8px 4px 8px;
+    border: 1px solid black;
+    border-radius: 15px 0 15px 15px;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    max-width: 1000px;
+}
+.my-content-timestamp{
+    margin: 0 4px 4px 2%;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    font-size : 13px;
+    text-align: right;
+}
+
+
+
+
+
+
+.message-container{
+    border: 1px solid black;
+}
+.chat-message-menu{
+    height: 50px;
+    background: black;
+}
+.chat-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+}
+.chat-message-input{
+    text-align: left;
+    line-height: 0;
+    width: 98%;
+    height: 87%;
+}
