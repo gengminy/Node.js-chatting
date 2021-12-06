@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
+const port = 3001;
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 const fs = require('fs');
 
-
+app.set('port', port);
 
 app.use(express.static('public'));
 app.use(express.static('node_modules/socket.io/client-dist'));
@@ -56,6 +57,6 @@ io.on('connection', (socket)=>{
     })
 })
 
-http.listen(3000, ()=>{
+http.listen(port, ()=>{
     console.log('server online');
 })
