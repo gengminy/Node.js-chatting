@@ -45,6 +45,18 @@ function addMyChat(content){
     $target.scrollTop = $target.scrollHeight;
 }
 
+function addNotice(content){
+    let $target = document.getElementById("content");
+    let message = `
+        <div class="notice">
+            <p class="my-content-message">${content}</p>
+        </div>  
+    `
+    $target.innerHTML += message;
+    $target.scrollTop = $target.scrollHeight;    
+}
+
+
 let list = [1,2,3,4];
 function setUserlist(list){
     if(list.length < 1) return;
@@ -62,7 +74,16 @@ function setUserlist(list){
     $userCount.innerHTML = list.length;
 }
 
-
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
 
 window.onload = ()=>{
     const $leftDrawerButton = document.querySelector('#menu-list').firstElementChild;

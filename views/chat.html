@@ -4,14 +4,11 @@
         <meta charset="utf-8">
         <title>chatting</title>
         <link rel="stylesheet" href="./css/chat.css">
-        <script type="text/javascript" src="./js/chat.js"></script>
-        
+        <script type="text/javascript" src="./js/chat.js"></script>     
     </head>
 
     <body>
-        <div id="container" class="wrapper">
-
-                
+        <div id="container" class="wrapper">                
             <div id="left-drawer">
                 <div class = "drawer-head">
                     <p>←</p>
@@ -57,8 +54,11 @@
                         3:33pm
                     </div>
                     <p class="my-content-message">hppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeoppositeo</p>
-                </div>    
-                -->            
+                </div>
+                <div class="notice">
+                    <p>hello</p>
+                </div>
+                -->
             </div>
 
             <div id="footer" class="message-container">
@@ -72,12 +72,13 @@
         <script type="text/javascript" src="socket.io.js"></script>
         <script>
             const socket = io.connect();
+            const userName = getCookie('name') ?? 'anonymous';
+            const serverName = getCookie('server') ?? 'gengminy';
+
             socket.on('connect', ()=>{
                 console.log('Chatting Server Connected');
-                addMyChat('Chatting Server Connected!');
-                socket.emit('join', socket.id);
-        
-
+                addNotice('Chatting Server Connected!');
+                socket.emit('join', userName);
            })
 
            socket.on('userlist', (userlist)=>{
@@ -102,7 +103,8 @@
                addMyChat(this.value);
 
                 socket.emit('message', {
-                    name: socket.id,
+                    socketId: socket.id,
+                    name: userName,
                     message: this.value,
                     time : getCurrentTime()
                 })

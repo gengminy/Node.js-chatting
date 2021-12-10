@@ -17,9 +17,9 @@
 
             <div id="content">
                 <div class="login-form-container">
-                    <form id="login-form">
-                        <p><label for="name">Name:</label> <input id="name" type="text" placeholder="Nickname" value="Anonymous1"></input></p>
-                        <p><label for="serverName">Server:</label> <input id="serverName" type="text" placeholder="Server" value="Gengminy"></input></p>
+                    <form action="/login_process" method="post" id="login-form">
+                        <p><label for="name">Name:</label> <input id="name" name="name" type="text" placeholder="Nickname" value="Anonymous1"></input></p>
+                        <p><label for="serverName">Server:</label> <input id="serverName" name="serverName" type="text" placeholder="Server" value="Gengminy"></input></p>
                         <input type='submit' value="Get started!">
                     </form>
                 </div>
